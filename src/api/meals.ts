@@ -37,3 +37,16 @@ export const getAllMeals = async (): Promise<Meal[]> => {
 
   return allMeals;
 };
+
+export function countIngredients(meal: Meal): number { //field to sort by 
+  let total = 0;
+  let count = 1;
+  while (count <= 20) {
+    const ingredient = meal[`strIngredient${count}`];
+    if (ingredient) { //not null or empty
+      total += 1
+    }
+    count += 1
+  }
+  return total;
+}

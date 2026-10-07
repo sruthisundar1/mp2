@@ -1,0 +1,67 @@
+/* css module based on MP tips */
+/* card styling and no bullets in list from https://www.w3schools.com/howto/howto_css_cards.asp, https://www.w3schools.com/howto/howto_css_list_without_bullets.asp  */
+/* debugging with claude */
+.searching {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.search {
+  margin-left: auto;
+}
+
+.card {
+  display: flex;
+  margin-bottom: 12px;
+  padding: 8px;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.142);
+  transition: 0.3s;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 105, 141, 0.3);
+  text-decoration: none;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.623);
+}
+
+.card img {
+  width: 100px;
+  border-radius: 5px;
+  align-self: flex-start;
+}
+
+.container {
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container h4 {
+  margin-top: 0;
+  margin-bottom: auto;
+}
+
+.container p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.container p:last-child {
+  margin-bottom: 0;
+}
+
+.mealList {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.noResult {
+  text-align: center;
+}
