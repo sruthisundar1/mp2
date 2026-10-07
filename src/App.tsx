@@ -10,9 +10,9 @@ import styles from './App.module.css'
 
 // Sources
 // https://v5.reactrouter.com/web/guides/quick-start
-// Routing syntax at https://reactrouter.com/start/framework/routing 
+// Routing syntax at https://reactrouter.com/start/declarative/routing 
 // Navlink from https://reactrouter.com/api/components/NavLink 
-// useState help from https://react.dev/learn/typescript 
+// useState, interface help from https://react.dev/learn/typescript 
 
 function App() {
 
@@ -25,8 +25,8 @@ function App() {
     .then((result) => {
       setMeals(result);
     })
-    .catch((err) => {
-      setError(err.message);
+    .catch(() => {
+      setError("Meals could not be loaded.");
     });
   }, []);
 
@@ -45,7 +45,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ListView meals={meals} />} />
         <Route path="/gallery" element={<GalleryView />} />
-        <Route path="/meal/:id" element={<DetailView />} />
+        <Route path="/meal/:id" element={<DetailView meals={meals} />} />
       </Routes>
     </div>
   )

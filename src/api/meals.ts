@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Meal, MealsResponse } from "./response";
+import type { Ingredient, Meal, MealsResponse } from "./response";
 
 //from https://www.themealdb.com/api.php
 const API_URL = "https://www.themealdb.com/api/json/v1/1";
@@ -39,14 +39,21 @@ export const getAllMeals = async (): Promise<Meal[]> => {
 };
 
 export function countIngredients(meal: Meal): number { //field to sort by 
-  let total = 0;
+  return getIngredients(meal).length;
+}
+
+export function getIngredients(meal: Meal): Ingredient[] {
+  const all_ingredients = [];
   let count = 1;
   while (count <= 20) {
-    const ingredient = meal[`strIngredient${count}`];
-    if (ingredient) { //not null or empty
-      total += 1
+    const each_ingredient = meal[`strIngredient${count}`];
+    const each_measure = meal[`strMeasure${count}`];
+
+    if (each_ingredient) { //not null or empty
+      all_ingredients.push({ name: each_ingredient, measure: each_measure });
     }
+
     count += 1
   }
-  return total;
+  return all_ingredients;
 }

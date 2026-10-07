@@ -3,6 +3,8 @@
 // search bar modeled off of https://react.dev/learn/thinking-in-react 
 // sorting by type help from https://www.kindacode.com/article/react-how-to-create-a-reorderable-list 
 //listview cards inspired from https://www.w3schools.com/howto/howto_css_cards.asp 
+// interface help from https://react.dev/learn/typescript 
+
 import type { Meal } from "../api/response";
 import { Link } from "react-router";
 import { useState } from 'react';
