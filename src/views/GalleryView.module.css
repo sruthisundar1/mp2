@@ -1,0 +1,46 @@
+/* gallery layout adapted from https://www.w3schools.com/css/css_image_gallery.asp */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.galleryItem {
+  margin: 5px;
+  border: 1px solid rgb(49, 49, 49);
+  border-radius: 5px;
+  width: 180px;
+}
+
+.galleryItem:hover {
+  border: 1px solid white;
+}
+
+.galleryItem img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding-left: 12%;
+  padding-right: 12%;
+  margin-bottom: 16px;
+}
+
+.filters label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

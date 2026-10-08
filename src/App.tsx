@@ -44,7 +44,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<ListView meals={meals} />} />
-        <Route path="/gallery" element={<GalleryView />} />
+        <Route path="/gallery" element={<GalleryView meals={meals} />} />
         <Route path="/meal/:id" element={<DetailView meals={meals} />} />
       </Routes>
     </div>
